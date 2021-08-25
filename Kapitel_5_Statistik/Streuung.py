@@ -1,6 +1,9 @@
 from typing import List
-from ...DataScienceBuch.Kapitel_4_Lineare_Algebra.Vektoren import sum_of_squares
+from ..Kapitel_4_Lineare_Algebra.Vektoren import sum_of_squares
 from .Lagemaße import mean
+import numpy
+
+num_friends = numpy.random.binomial(100, 0.06, 206)
 
 """ Mit der Streuung wird die Eigenschaft einer Liste beschrieben, die angibt, 
 wie stark die Werte der Liste auseinanderliegen """
@@ -28,3 +31,6 @@ def variance(xs: List[float]) -> float:
     deviation = de_mean(xs)
     # Von jedem Element wird der Mittelwert abgezogen, nun kann man die quadrate der Elemente nehmen
     return(sum_of_squares(deviation)/n)
+
+
+print(variance(num_friends))
