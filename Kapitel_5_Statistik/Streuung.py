@@ -1,7 +1,9 @@
 from typing import List
-from ..Kapitel_4_Lineare_Algebra.Vektoren import sum_of_squares
-from .Lagemaße import mean
+from Lagemaße import mean
 import numpy
+import sys
+sys.path.insert(
+    1, '/Users/timehmann/Documents/DataScienceBuch/Kapitel_4_Lineare_Algebra')
 
 num_friends = numpy.random.binomial(100, 0.06, 206)
 
@@ -33,4 +35,5 @@ def variance(xs: List[float]) -> float:
     return(sum_of_squares(deviation)/n)
 
 
+print("du hund")
 print(variance(num_friends))
