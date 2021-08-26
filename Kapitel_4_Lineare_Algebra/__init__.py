@@ -1,0 +1,1 @@
+from .Vektoren import sum_of_squares

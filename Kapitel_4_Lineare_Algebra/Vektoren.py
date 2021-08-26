@@ -48,7 +48,7 @@ def scalar_multiply(c: float, v: Vector) -> Vector:
 # Zusammen ermöglicht das, einen Vektor aus den Mittelwerten der Komponenten aller Vektoren zu bestimmen
 
 
-def vector_mean(vectors: List(Vector)) -> Vector:
+def vector_mean(vectors: List[Vector]) -> Vector:
     return(scalar_multiply(1/len(vectors), vector_sum(vectors)))
 
 

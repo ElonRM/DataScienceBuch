@@ -1,9 +1,15 @@
 from typing import List
 from Lagemaße import mean
 import numpy
-import sys
-sys.path.insert(
-    1, '/Users/timehmann/Documents/DataScienceBuch/Kapitel_4_Lineare_Algebra')
+import os, sys
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+ 
+from Kapitel_4_Lineare_Algebra import Vektoren
+ 
+print("Execution of run starts")
+
 
 num_friends = numpy.random.binomial(100, 0.06, 206)
 
@@ -32,8 +38,8 @@ def variance(xs: List[float]) -> float:
     n = len(xs)
     deviation = de_mean(xs)
     # Von jedem Element wird der Mittelwert abgezogen, nun kann man die quadrate der Elemente nehmen
-    return(sum_of_squares(deviation)/n)
+    return(Vektoren.sum_of_squares(deviation)/n)
 
 
 print("du hund")
-print(variance(num_friends))
+print("Varianz:", variance(num_friends))
