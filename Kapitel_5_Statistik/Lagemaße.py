@@ -8,8 +8,6 @@ def mean(xs: List[float]) -> float:
     return sum(xs)/len(xs)
 
 
-print(mean(num_friends))
-
 # Die Unterstriche zeigen, dass dies "private" Funktionen sind, da sie nur
 # von unserer median Funktion, nicht aber von anderen Nutzern unserer Statistik
 # Bibliotek verwendet werden sollen
@@ -30,10 +28,7 @@ def median(v: List[float]) -> float:
     return _median_odd(v) if len(v) % 2 == 1 else _meadian_even(v)
 
 
-print(median(num_friends))
-
-
-def quatile(xs: List[float], p: float) -> float:
+def quantile(xs: List[float], p: float) -> float:
     """Liefert den Wert des p-ten Perzentils"""
     return sorted(xs)[int(len(xs)*p)]
 
@@ -45,6 +40,3 @@ def mode(xs: List[float]) -> List[float]:
     return [x_i
             for x_i, count in counts.items()
             if count == max_count]
-
-
-print(mode(num_friends))
