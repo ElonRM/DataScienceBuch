@@ -34,9 +34,9 @@ def binomial_histogram(p: float, n: int, num_points: int) -> None:
     xs = range(min(data), max(data)+1)
     ys = [normal_cdf(x + 0.5, mu, sigma) - normal_cdf(x - 0.5, mu, sigma) for x in xs]
     plt.plot(xs,ys)
-    plt.title("Boinomial Distribution vs. Normal Approximation")
+    plt.title("Binomial Distribution vs. Normal Approximation")
     plt.show()
 
 
-binomial_histogram(0.75, 100, 100000)
+#binomial_histogram(0.75, 100, 100000)
 

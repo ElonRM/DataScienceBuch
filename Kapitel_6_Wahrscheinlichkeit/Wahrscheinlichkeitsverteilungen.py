@@ -78,7 +78,7 @@ def inverse_normal_cdf(p: float,
     hi_z = 10.0
     while hi_z-low_z > tolerance:
         mid_z = (hi_z + low_z) / 2
-        print(hi_z, low_z, normal_cdf(mid_z))
+        #print(hi_z, low_z, normal_cdf(mid_z))
         if(normal_cdf(mid_z)> p):
             hi_z = (hi_z+low_z)/2
         else:
@@ -86,7 +86,7 @@ def inverse_normal_cdf(p: float,
  
     return( (hi_z+low_z) /2)
 
-print(inverse_normal_cdf(p=0.8))  
+#print(inverse_normal_cdf(p=0.8))  
 
 
 #plot_normal_cdf()
