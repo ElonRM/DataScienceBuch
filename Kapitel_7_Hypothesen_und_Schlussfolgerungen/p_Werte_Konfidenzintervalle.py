@@ -7,11 +7,11 @@ import math
 import os
 import sys
 import random
-#currentdir = os.path.dirname(os.path.realpath(__file__))
-#parentdir = os.path.dirname(currentdir)
-#sys.path.append(parentdir)
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
 
-from . import Testen_von_Hypothesen as pbty
+import Testen_von_Hypothesen as pbty
 
 def two_sided_p_value(x: float, mu: float = 0, sigma: float = 1) -> float:
     """
