@@ -19,7 +19,7 @@ def normal_approximation_to_binomial(n: int, p: float) -> Tuple[float, float]:
 # dass die Variable unter einer Schwelle liegt
 normal_probability_below = normal_cdf
 
-def normal_probability_above(lo: float, hi: float, mu: float = 0, sigma: float = 1) -> float:
+def normal_probability_above(lo: float, mu: float = 0, sigma: float = 1) -> float:
     """Wahrscheinlichkeit, dass ein N(mu, sigma) größer als lo ist"""
     return 1-normal_cdf(lo, mu, sigma)
 
@@ -65,7 +65,7 @@ mu_0, sigma_0 = normal_approximation_to_binomial(1000, 0.5)
 
 # Signifikanzniveau von 5%
 lower_bound, upper_bound = normal_two_sided_bounds(0.95, mu_0, sigma_0)
-print(int(lower_bound), math.ceil(upper_bound))
+print("lower_bound, upper_bound: ",int(lower_bound), math.ceil(upper_bound))
 
 
 # Die Sensitivität des Tests, also die 1-Wahrscheinlichkeit des Fehlers 2. Art 
@@ -76,7 +76,7 @@ print(int(lower_bound), math.ceil(upper_bound))
 mu_1, sigma_1 = normal_approximation_to_binomial(1000, 0.55)
 p_second_error = normal_probability_between(lower_bound, upper_bound, mu_1, sigma_1)
 sensitivity = 1-p_second_error
-print(sensitivity)
+print("Sensitivität des Tests: ",sensitivity)
 
 
 #Einseitiger Test mit signifikanzniveau 5%, dass p nicht übermäßig oft Kopf zeigt
